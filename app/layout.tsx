@@ -5,6 +5,9 @@ import { Navbar, Footer } from "@/components";
 export const metadata: Metadata = {
   title: "M-Afrik Car Hub",
   description: "Discover the optimal engine tailored for you.",
+  icons: {
+    icon: '/logo-mark.svg',
+  },
 };
 
 export default function RootLayout({

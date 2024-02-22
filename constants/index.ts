@@ -73,30 +73,10 @@ export const manufacturers = [
   
   export const footerLinks = [
     {
-      title: "About",
-      links: [
-        { title: "How it works", url: "/" },
-        { title: "Featured", url: "/" },
-        { title: "Partnership", url: "/" },
-        { title: "Bussiness Relation", url: "/" },
-      ],
-    },
-    {
-      title: "Company",
-      links: [
-        { title: "Events", url: "/" },
-        { title: "Blog", url: "/" },
-        { title: "Podcast", url: "/" },
-        { title: "Invite a friend", url: "/" },
-      ],
-    },
-    {
       title: "Socials",
       links: [
-        { title: "Discord", url: "/" },
-        { title: "Instagram", url: "/" },
-        { title: "Twitter", url: "/" },
-        { title: "Facebook", url: "/" },
+        { title: "Linkedin", image:'/linkedin.svg', url: "https://www.linkedin.com/in/marouane-pondikpa/" },
+        { title: "GitHub", image:'/github.svg', url: "https://github.com/maxfortune93/car_explorer_portal" },
       ],
     },
   ];

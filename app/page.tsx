@@ -1,4 +1,4 @@
-import { CarCard, CustomFilter, Hero, SearchBar } from "@/components";
+import { CarCard, CustomFilter, Hero, SearchBar, ShowMore } from "@/components";
 import { fuels, yearsOfProduction } from "@/constants";
 import { HomeProps } from "@/types";
 import { fetchCars } from "@/utils";
@@ -8,13 +8,11 @@ export default async function Home({ searchParams }: HomeProps ) {
     manufacturer: searchParams.manufacturer ?? "",
     year: searchParams.year ?? 2022,
     fuel: searchParams.fuel ?? "",
-    limit: searchParams.limit ?? 12,
+    limit: searchParams.limit ?? 10,
     model: searchParams.model ?? "",
   });
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
-  console.log(allCars);
 
   return (
     <main className="overflow-hidden">
@@ -40,11 +38,11 @@ export default async function Home({ searchParams }: HomeProps ) {
                 <CarCard key={allCars.indexOf(car)} car={car} />
               ))}
             </div>
-{/* 
+
             <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
-            /> */}
+              pageNumber={(searchParams.limit ?? 10) / 10}
+              isNext={(searchParams.limit ?? 10) > allCars.length}
+            />
           </section>
         ) : (
           <div className='home__error-container'>
@@ -54,6 +52,7 @@ export default async function Home({ searchParams }: HomeProps ) {
         )}
         
       </div>
+      {/* <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full fixed bottom-4 right-4">Botão Flutuante</button> */}
     </main>
   );
 }
